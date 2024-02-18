@@ -1,0 +1,73 @@
+# Zippo Fileshare
+
+Zippo Fileshare is a file sharing platform that allows users to easily share files with any Zippo Profile. Also, users may join groups, which means the whole group will have access to all files on the profile. With the admin panel, admins can delete users and groups, email users, and email all users simultaneously. WIth these features, Zippo Fileshare becomes an exceelent filesharing paltfform to use and to make it your own. 
+
+## Table of Contents
+
+- [Features](#features)
+- [Setting Up](#setting-up)
+- [License](#license)
+
+## Features
+
+- Admin Panel
+- Groups
+- User Profiles
+- File sharing
+
+## Setting Up
+
+XAMPP is recommended. After download, you must set up your database.
+
+### Tables in Database zippo
+- admins
+admin_id (primary key)
+username (varchar 255)
+email (varchar 255)
+password (varchar 255)
+
+- files
+file_id (primary key)
+user_id (int)
+filename (varchar 255)
+filepath (varchar 255)
+
+- file_shares
+share_id (primary key)
+file_id (int)
+sender_id (int)
+
+- file_share_recipients
+share_id (int)
+recipient_id (int)
+
+- groups
+group_id (primary key)
+name (varchar 255)
+group_key (varchar 255)
+
+- group_memberships
+membership_id (primary key)
+group_id (int)
+user_id (int)
+
+- password_reset
+pr_id (primary key)
+email (varchar 255)
+token (int)
+
+- users
+user_id (primary key)
+user_type (text)
+username (varchar 255)
+email (varchar 255)
+password (varchar 255)
+group_id (int)
+creator (text)
+
+Make sure the php.ini is set up for emails.
+
+## License
+
+Check out the License.txt file
+

@@ -1,0 +1,33 @@
+/* Loader Styles */
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 9999;
+}
+
+.loader::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 6px solid red;
+    border-color: red transparent red transparent;
+    animation: loader 1.2s linear infinite;
+}
+
+@keyframes loader {
+    0% {
+     transform: rotate(0deg);
+    }
+    100% {
+     transform: rotate(360deg);
+    }
+}
